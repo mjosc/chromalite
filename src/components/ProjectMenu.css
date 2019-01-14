@@ -1,0 +1,17 @@
+.ProjectMenu {
+  /* ---------------------------- */
+  /* Vertical & horizontal center */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  /* ---------------------------- */
+  height: 5.75em;
+  color: #43709D;
+  background-color: #28425C;
+}
+
+.ProjectMenu h1 {
+  font-size: 2em;
+  font-weight: 700;
+}
