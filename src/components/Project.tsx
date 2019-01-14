@@ -18,16 +18,11 @@ class Project extends React.Component<{}, {}> {
       
     }
   }
-  componentDidMount() {
-    
-  }
   render() {
     return (
       <div className='Project'>
         <ProjectMenu />
-        <div className='Project_schemes'>
-        
-        </div>
+        <div className='Project_schemes' />
       </div>
     )
   }
