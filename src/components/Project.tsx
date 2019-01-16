@@ -3,11 +3,13 @@ import * as React from 'react';
 import ProjectMenu from './ProjectMenu';
 import './Project.css';
 
-interface IProps {
+import { database as db } from '../db';
+
+interface Props {
 
 }
 
-interface IState {
+interface State {
 
 }
 
@@ -17,6 +19,14 @@ class Project extends React.Component<{}, {}> {
     this.state = {
       
     }
+  }
+  componentDidMount() {
+    db.add(['#456789'])
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+    db.get(1)
+      .then(res => console.log(res))
+      .catch(err => console.log(err.response))
   }
   render() {
     return (
