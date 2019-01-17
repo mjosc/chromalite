@@ -21,12 +21,12 @@ class Project extends React.Component<{}, {}> {
     }
   }
   componentDidMount() {
-    db.add(['#456789'])
+    db.post('api/hello', ['#456789'])
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err.response.data));
+    db.get('api/schemes')
       .then(res => console.log(res))
-      .catch(err => console.log(err));
-    db.get(1)
-      .then(res => console.log(res))
-      .catch(err => console.log(err.response))
+      .catch(err => console.log(err.response.data))
   }
   render() {
     return (
