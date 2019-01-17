@@ -16,8 +16,6 @@ interface State {
 
 class Project extends React.Component<{}, State> {
 
-  private schemesRef = React.createRef<HTMLDivElement>();
-
   constructor(props: {}) {
     super(props);
     this.state = {
@@ -31,19 +29,19 @@ class Project extends React.Component<{}, State> {
       .then(res => this.setState({ schemes: res.data as SchemeCollection }))
       .catch(err => console.log(err.response.data))
   }
-  
+
   render() {
     return (
       <div className='Project'>
         <ProjectMenu />
-        <div className='Project__schemes' ref={this.schemesRef}>
+        <div className='Project__schemes'>
           {this.state.schemes.map((scheme, index) => (
-            <div className='Project__scheme' style={{ width: '25em' }}>
+            <div className='Project__scheme'>
               {scheme.map((color, idx, arr) => (
                 <div
                   className='Project__color'
-                  style={{ width: `${400 / arr.length}em`, backgroundColor: color }}
-                >test</div>
+                  style={{ backgroundColor: color }}
+                />
               ))}
             </div>
           ))}
