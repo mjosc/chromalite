@@ -3,7 +3,7 @@ import * as React from 'react';
 import ProjectMenu from './ProjectMenu';
 import './Project.css';
 
-import { database as db } from '../db';
+import { database as db } from '../database';
 
 interface Props {
 
