@@ -98,7 +98,7 @@ const execute = (action: () => InternalResult, delay = 1000) =>
  * @param {string} method   HTTP method (e.g. 'post')
  * @param {object} data     Object representing the body of the HTTP request.
  */
-const route = (url: string, method: HttpMethod, data: any = {}): Promise<ServerResponse> => {
+const route = (url: string, method: HttpMethod, data: Scheme = []): Promise<ServerResponse> => {
   
   if (url.startsWith(endpoints.schemes)) {
     if (url.length === endpoints.schemes.length) {
@@ -125,5 +125,7 @@ const database: PublicAPI = {
 }
 
 export {
-  database
+  database,
+  Scheme,
+  SchemeCollection
 }
