@@ -10,7 +10,6 @@ interface Props {
 }
 
 interface State {
-  schemesWidth: number
   schemes: SchemeCollection
 }
 
@@ -19,7 +18,6 @@ class Project extends React.Component<{}, State> {
   constructor(props: {}) {
     super(props);
     this.state = {
-      schemesWidth: 0,
       schemes: []
     }
   }
