@@ -5,7 +5,7 @@
 
 .Project__schemes {
   max-width: 25em;
-  margin: auto;
+  margin: 3em auto 0 auto;
 }
 
 .Project__scheme {
@@ -15,6 +15,23 @@
   height: 7.25em;
 }
 
+.Project__scheme:not(:first-child) {
+  margin-top: 2em;
+}
+
 .Project__color {
   flex: 1;
+  min-width: 5em;
+
+  position: relative;
+}
+
+.Project__hexcode {
+  width: 100%;
+  font-size: 0.75em;
+  color: white;
+  opacity: 0.51;
+  position: absolute;
+  bottom: 0.25em;
+  text-align: center;
 }

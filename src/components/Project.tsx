@@ -36,10 +36,11 @@ class Project extends React.Component<{}, State> {
           {this.state.schemes.map((scheme, index) => (
             <div className='Project__scheme'>
               {scheme.map((color, idx, arr) => (
-                <div
-                  className='Project__color'
-                  style={{ backgroundColor: color }}
-                />
+                <div className='Project__color' style={{ backgroundColor: color }}>
+                  <div className='Project__hexcode'>
+                    <p>{color}</p>
+                  </div>
+                </div>
               ))}
             </div>
           ))}
