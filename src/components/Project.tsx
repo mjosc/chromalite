@@ -1,6 +1,8 @@
 import * as React from 'react';
 
 import ProjectMenu from './ProjectMenu';
+import LoadingAnimation from './LoadingAnimation';
+
 import './Project.css';
 
 import { database as db, SchemeCollection, Scheme } from '../database';
@@ -10,6 +12,7 @@ interface Props {
 }
 
 interface State {
+  isLoading: boolean
   schemes: SchemeCollection
 }
 
@@ -18,22 +21,30 @@ class Project extends React.Component<{}, State> {
   constructor(props: {}) {
     super(props);
     this.state = {
+      isLoading: true,
       schemes: []
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
+    const start = Date.now();
     db.get('api/schemes')
-      .then(res => this.setState({ schemes: res.data as SchemeCollection }))
-      .catch(err => console.log(err.response.data))
+      .then(res => setTimeout(() => this.setState({
+        isLoading: false,
+        schemes: res.data as SchemeCollection
+      }), 2000 - (Date.now() - start))) // Minimum wait time.
   }
 
   render() {
     return (
       <div className='Project'>
         <ProjectMenu />
+        <LoadingAnimation 
+          isLoading={this.state.isLoading} 
+          color='#28425C'
+        />
         <div className='Project__schemes'>
-          {this.state.schemes.map((scheme, index) => (
+          {!this.state.isLoading && this.state.schemes.map((scheme, index) => (
             <div className='Project__scheme'>
               {scheme.map((color, idx, arr) => (
                 <div className='Project__color' style={{ backgroundColor: color }}>

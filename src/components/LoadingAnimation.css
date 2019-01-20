@@ -1,0 +1,7 @@
+.LoadingAnimation {
+  text-align: center;
+}
+
+.LoadingAnimation__internal {
+  display: inline-block;
+}
