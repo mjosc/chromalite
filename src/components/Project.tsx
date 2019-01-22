@@ -36,13 +36,13 @@ class Project extends React.Component<{}, State> {
   }
 
   render() {
-    return (
+    return this.state.isLoading ? (
+      <div className='Project--loading'>
+        <LoadingAnimation color='#28425C'/>
+      </div>
+    ) : (
       <div className='Project'>
         <ProjectMenu />
-        <LoadingAnimation 
-          isLoading={this.state.isLoading} 
-          color='#28425C'
-        />
         <div className='Project__schemes'>
           {!this.state.isLoading && this.state.schemes.map((scheme, index) => (
             <div className='Project__scheme'>
