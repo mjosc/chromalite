@@ -32,7 +32,7 @@ class Project extends React.Component<{}, State> {
       .then(res => setTimeout(() => this.setState({
         isLoading: false,
         schemes: res.data as SchemeCollection
-      }), 2000 - (Date.now() - start))) // Minimum wait time.
+      }), 2000 - (Date.now() - start))) // Minimum wait time (ms).
   }
 
   render() {
@@ -44,7 +44,7 @@ class Project extends React.Component<{}, State> {
       <div className='Project'>
         <ProjectMenu />
         <div className='Project__schemes'>
-          {!this.state.isLoading && this.state.schemes.map((scheme, index) => (
+          {this.state.schemes.map((scheme, index) => (
             <div className='Project__scheme'>
               {scheme.map((color, idx, arr) => (
                 <div className='Project__color' style={{ backgroundColor: color }}>
