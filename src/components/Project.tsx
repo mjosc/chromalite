@@ -1,12 +1,9 @@
 import * as React from 'react';
-
+import { database as db, SchemeCollection } from '../database';
 import ProjectMenu from './ProjectMenu';
 import LoadingAnimation from './LoadingAnimation';
 import ButtonAddScheme from './ButtonAddScheme';
-
 import './Project.css';
-
-import { database as db, SchemeCollection, Scheme } from '../database';
 
 interface Props {
 
@@ -17,8 +14,7 @@ interface State {
   schemes: SchemeCollection
 }
 
-class Project extends React.Component<{}, State> {
-
+class Project extends React.Component<Props, State> {
   constructor(props: {}) {
     super(props);
     this.state = {
@@ -37,7 +33,7 @@ class Project extends React.Component<{}, State> {
   }
 
   handleClick = (e: MouseEvent) => null;
-  
+
   render() {
     return this.state.isLoading ? (
       <div className='Project--loading'>
@@ -46,7 +42,7 @@ class Project extends React.Component<{}, State> {
     ) : (
       <div className='Project'>
         <ProjectMenu />
-        <div className='Project__schemes'>
+        <div className='Project__schemes-container'>
           {this.state.schemes.map((scheme, index) => (
             <div className='Project__scheme'>
               {scheme.map((color, idx, arr) => (
