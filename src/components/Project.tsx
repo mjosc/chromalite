@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import ProjectMenu from './ProjectMenu';
 import LoadingAnimation from './LoadingAnimation';
+import ButtonAddScheme from './ButtonAddScheme';
 
 import './Project.css';
 
@@ -35,6 +36,8 @@ class Project extends React.Component<{}, State> {
       }), 2000 - (Date.now() - start))) // Minimum wait time (ms).
   }
 
+  handleClick = (e: MouseEvent) => null;
+  
   render() {
     return this.state.isLoading ? (
       <div className='Project--loading'>
@@ -55,6 +58,7 @@ class Project extends React.Component<{}, State> {
               ))}
             </div>
           ))}
+          <ButtonAddScheme onClick={this.handleClick}/>
         </div>
       </div>
     );

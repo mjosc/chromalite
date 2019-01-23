@@ -1,0 +1,14 @@
+.ButtonAddScheme {
+  display: inline-block;
+  width: 100%;
+  height: 7.25rem;
+  margin-top: 2rem;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  background-color: #CFCFCF;
+}
+
+.ButtonAddScheme__icon {
+
+}
