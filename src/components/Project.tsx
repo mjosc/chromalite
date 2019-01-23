@@ -37,7 +37,7 @@ class Project extends React.Component<Props, State> {
   render() {
     return this.state.isLoading ? (
       <div className='Project--loading'>
-        <LoadingAnimation color='#28425C'/>
+        <LoadingAnimation />
       </div>
     ) : (
       <div className='Project'>
