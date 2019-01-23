@@ -1,5 +1,5 @@
 //
-// A mock database without ES6 classes. Implements promise wrappers around
+// A mock database without ES6 class syntax. Implements promise wrappers around
 // setTimeout to mimick asyncronous API calls. The response objects are very
 // simple abstractions of HTTP responses with the same properties as would be
 // expected through the use of axios in production. For example, res.data and
