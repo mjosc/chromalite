@@ -14,6 +14,4 @@ const ContextMenu: React.FunctionComponent<Props> = props => (
 );
 
 export default ContextMenu;
-export {
-  contextMenu as MenuManager
-}
+export { contextMenu as MenuManager }
