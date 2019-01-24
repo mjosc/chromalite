@@ -49,25 +49,28 @@ class Project extends React.Component<Props, State> {
         <LoadingAnimation />
       </div>
     ) : (
-      <div className='Project'>
-        <ProjectMenu />
-        <div className='Project__schemes-container'>
-          {this.state.schemes.map((scheme, index) => (
-            <div className='Project__scheme'>
-              {scheme.map((color, idx, arr) => (
-                <div className='Project__color' onContextMenu={this.handleContextMenu} style={{ backgroundColor: color }}>
-                  <div className='Project__hexcode'>
-                    <p>{color}</p>
+        <div className='Project'>
+          <ProjectMenu />
+          <div className='Project__schemes-container'>
+            {this.state.schemes.map((scheme, index) => ( // TODO: Add keys
+              <div className='Project__scheme'>
+                {scheme.map((color, idx, arr) => ( // TODO: Add keys
+                  <div
+                    className='Project__color'
+                    onContextMenu={this.handleContextMenu}
+                    style={{ backgroundColor: color }}>
+                    <div className='Project__hexcode'>
+                      <p>{color}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          ))}
-          <ButtonAddScheme onClick={this.handleClick}/>
+                ))}
+              </div>
+            ))}
+            <ButtonAddScheme onClick={this.handleClick} />
+          </div>
+          <ContextMenu />
         </div>
-        <ContextMenu />
-      </div>
-    );
+      );
   }
 }
 
