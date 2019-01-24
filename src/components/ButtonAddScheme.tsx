@@ -1,5 +1,5 @@
 import * as React from 'react';
-import SvgAdd from '../icons/SvgAdd';
+import SvgIconAdd from '../icons/SvgIconAdd';
 import './ButtonAddScheme.css';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 
 const ButtonAddScheme: React.FunctionComponent<Props> = props => (
   <button className='ButtonAddScheme'>
-    <SvgAdd className='ButtonAddScheme__icon' />
+    <SvgIconAdd className='ButtonAddScheme__icon' />
   </button>
 );
 
