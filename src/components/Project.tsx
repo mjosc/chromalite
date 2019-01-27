@@ -3,7 +3,7 @@ import { database as db, SchemeCollection } from '../database';
 import ProjectMenu from './ProjectMenu';
 import LoadingAnimation from './LoadingAnimation';
 import ButtonAddScheme from './ButtonAddScheme';
-import ContextMenu, { MenuManager } from './ContextMenu';
+import ColorContextMenu, { contextMenu } from './ColorContextMenu';
 import './Project.css';
 
 interface Props {
@@ -37,11 +37,18 @@ class Project extends React.Component<Props, State> {
 
   handleContextMenu = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
-    MenuManager.show({
+    contextMenu.show({
       id: 'test',
       event: e,
     });
   }
+
+  handleRemoveColor = (e: any) => { // Test
+    console.log(e);
+  }
+
+  // TODO: Refactor state to match redux store and add the appropriate keys once
+  // each project and scheme has the appropriately db-assigned id.
 
   render() {
     return this.state.isLoading ? (
@@ -53,7 +60,7 @@ class Project extends React.Component<Props, State> {
           <ProjectMenu />
           <div className='Project__schemes-container'>
             {this.state.schemes.map((scheme, index) => ( // TODO: Add keys
-              <div className='Project__scheme'>
+              <div key={'todo'} className='Project__scheme'>
                 {scheme.map((color, idx, arr) => ( // TODO: Add keys
                   <div
                     className='Project__color'
@@ -68,7 +75,7 @@ class Project extends React.Component<Props, State> {
             ))}
             <ButtonAddScheme onClick={this.handleClick} />
           </div>
-          <ContextMenu />
+          <ColorContextMenu onClick={this.handleRemoveColor} />
         </div>
       );
   }
