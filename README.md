@@ -12,3 +12,4 @@ The app currently runs on a simple in-memory database (see [src/database.ts](htt
 * Building out the context menu functionality
 * Implement the container/presentational component pattern
 * Add tooltips for navigation and project/scheme edits
+* Add unit tests for redux reducers
