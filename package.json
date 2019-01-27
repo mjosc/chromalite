@@ -5,13 +5,16 @@
   "dependencies": {
     "@types/classnames": "^2.2.7",
     "@types/lodash": "^4.14.119",
+    "@types/react-redux": "^7.0.1",
     "classnames": "^2.2.6",
     "lodash": "^4.17.11",
     "react": "^16.7.0",
     "react-contexify": "^4.0.1",
     "react-dom": "^16.7.0",
     "react-loading": "^2.0.3",
+    "react-redux": "^6.0.0",
     "react-scripts-ts": "^4.0.8",
+    "redux": "^4.0.1",
     "reset-css": "^4.0.1"
   },
   "scripts": {
